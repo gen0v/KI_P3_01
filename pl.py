@@ -3,9 +3,13 @@ import itertools
 # Propositional Logic 
 
 class pl:
-    def __init__(self, kb):
+    def __init__(self, kb = set()):
         self.kb = kb
 
+    def getKB(self):
+        return self.kb
+
+    # function to negate a sentence/literal
     def negate(self, s: str):
         l = s.split(",")
         res = set()
@@ -16,10 +20,15 @@ class pl:
                 r = "-" + i
             res.add(r)
         return res
-            
+
+    # function to add new information to the kb
+    def tell(self, sentence):
+        self.kb.add(sentence)
+
     def ask(self, alpha):
         return self.pl_resolution(self.kb, alpha)
 
+    # function to check if there a literal has a complementary in the sentence
     def isComplementaryLiteral(self, literal, sentence):
         nl = self.negate(literal).pop()
         for l in sentence:
@@ -28,6 +37,7 @@ class pl:
                 return True
         return False
 
+    # resolve algorithm
     def pl_resolve(self,pair):
         print("Pair: " + str(pair))
         flag = False
@@ -77,12 +87,18 @@ class pl:
             clauses = clauses.union(new)
 
 
-kb = {"-B11,P12,P21","-P12,B11","-P21,B11","-B11"}
-pl = pl(kb)
+# kb = {"-B11,P12,P21","-P12,B11","-P21,B11","-B11"}
+# pl = pl(kb)
 # no pit in 1 2
-a = "-P12"
-print(a)
-print(kb)
+# a = "P12"
+
+pl = pl()
+pl.tell("-B11,P12,P21")
+pl.tell("-P12,B11")
+pl.tell("-P21,B11")
+pl.tell("-B11")
+
+print(pl.getKB())
 
 print("---RESOLUTION---")
-print(pl.ask(a))
+print(pl.ask("-P12"))
