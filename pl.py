@@ -115,7 +115,7 @@ class pl:
             if inferred[p] == False:
                 inferred[p] = True
                 for c in kb:
-                    if p in (l.split("=>")[0].split(",")):
+                    if p in (c.split("=>")[0].split(",")):
                         count[c] -= 1
                         if count[c] == 0: agenda += self.getClauseHead(l)
         return False
