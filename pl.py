@@ -100,30 +100,60 @@ class pl:
         agenda = []
         inferred = {}
         for l in kb:
+            # if there is no "," or "=>" then it is a fact
+            if "," not in l and "=>" not in l: 
+                agenda.insert(0,l)
+                # add key = false to inferred
+                inferred[l] = False
+            else:
+                for s in self.getClauseHead(l):
+                    inferred[s] = False
+                for s in self.getClauseBody(l):
+                    inferred[s] = False
             # count the symbols in the premise
             count[l] = len((l.split("=>")[0].split(",")))
-            # add key = false to inferred
-            inferred[l] = False
-            # if there is no "," or "=>" then it is a fact
-            if "," not in l and "=>" not in l: agenda.insert(0,l)
-        print(count)
-        print(agenda)
-        print(inferred)
+
         while len(agenda) > 0:
+            print("--------------")
+            print("Count: " + str(count))
+            print("Agenda: " + str(agenda))
+            print("Inferred: " + str(inferred))
             p = agenda.pop()
+            print("P: " + str(p))
             if p == q: return True
             if inferred[p] == False:
                 inferred[p] = True
                 for c in kb:
-                    if p in (c.split("=>")[0].split(",")):
-                        count[c] -= 1
-                        if count[c] == 0: agenda += self.getClauseHead(l)
+                    c_premise = c.split("=>")[0].split(",")
+                    if len(c_premise) == 1: continue
+                    print("C: " + str(c))
+                    if p in c_premise:
+                        print("C2: " + str(c))
+                        print(count)
+                        count[str(c)] -= 1
+                        if count[str(c)] == 0: 
+                            print("New agenda")
+                            agenda += self.getClauseHead(c)
+                            print(agenda)
+                            print("+++++++++")
         return False
 
     def getClauseHead(self, clause):
+        print(clause)
         if "=>" in clause:
             res = clause.split("=>")
+            print(res)
             res = res[1].split(',')
+            print(res)
+        else:
+            res = clause.split(",")
+        print(res)
+        return res
+    
+    def getClauseBody(self, clause):
+        if "=>" in clause:
+            res = clause.split("=>")
+            res = res[0].split(',')
         else:
             res = clause.split(",")
         return res
