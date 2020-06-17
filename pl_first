@@ -1,0 +1,59 @@
+Script started on 2020-06-17 20:44:30+0200
+]0;genov@krub: ~/repos/KI/P3[01;32mgenov@krub[00m:[01;34m~/repos/KI/P3[00m$ /usr/bin/python3.6 /home/genov/repos/KI/P3/wumpus.py
+{'S11', '-S11,W12,W21', '-W21,S11', '-S21', '-W12,S11'}
+---RESOLUTION---
+False
+/home/genov/.local/lib/python3.6/site-packages/gym/logger.py:30: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  warnings.warn(colorize('%s: %s'%('WARN', msg % args), 'yellow'))
+{'x': 0, 'y': 0, 'gold': False, 'direction': <Direction.EAST: 1>, 'arrow': True, 'stench': True, 'breeze': False, 'glitter': False, 'bump': False, 'scream': False}
++---+---+---+---+
+|   |   |   |  G|
+|   |   |   |   |
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+| A>|   |   |   |
++---+---+---+---+
+Perception [ St: True, Br: False, G: False, Bu: False, Sc: False ]
+Score : 0
+Tell? (x/exit)  = -S11,W12,W21
+Tell? (x/exit)  = -W12,S11
+Tell? (x/exit)  -W21,S11
+Tell? (x/exit)  x
+Ask? (x/exit)  W21
+False
+Ask? (x/exit)  W12
+False
+Ask? (x/exit)  W11
+False
+Ask? (x/exit)  S11
+True
+Ask? (x/exit)  x
++---+---+---+---+
+|   |   |   |  G|
+|   |   |   |   |
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+| A>|   |   |   |
++---+---+---+---+
+Perception [ St: True, Br: False, G: False, Bu: False, Sc: False ]
+Score : 0
+Which action?^X^CTraceback (most recent call last):
+  File "/home/genov/repos/KI/P3/wumpus.py", line 24, in <module>
+    ac = input("Which action?")
+KeyboardInterrupt
+]0;genov@krub: ~/repos/KI/P3[01;32mgenov@krub[00m:[01;34m~/repos/KI/P3[00m$ exit
+exit
+
+Script done on 2020-06-17 20:46:01+0200

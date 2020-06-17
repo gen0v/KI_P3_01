@@ -29,26 +29,23 @@ class pl:
     def ask(self, alpha):
         return self.pl_resolution(self.kb, alpha)
 
-    def ask_horn(self, alpha):
-        return self.pl_fc_entails(self.kb, alpha)
-
     # function to check if there a literal has a complementary in the sentence
     def isComplementaryLiteral(self, literal, sentence):
         nl = self.negate(literal).pop()
         for l in sentence:
             if nl in sentence:
-                print("Contradiction")
+                # print("Contradiction")
                 return True
         return False
 
     # resolve algorithm
     def pl_resolve(self,pair):
-        print("Pair: " + str(pair))
+        # print("Pair: " + str(pair))
         flag = False
         l1 = pair[0].split(",")
         l2 = pair[1].split(",")
         s = list(set(l1+l2))
-        print(s)
+        # print(s)
         for literal in l1:
             # if is complementary literal remove it
             if self.isComplementaryLiteral(literal,l2):
@@ -80,22 +77,37 @@ class pl:
         while True:
             for pair in itertools.combinations(clauses,2):
                 resolvents = self.pl_resolve(pair)
-                print(resolvents)
+                # print(resolvents)
                 if " " in resolvents: return True
-                print(resolvents)
+                # print(resolvents)
                 new = new.union(resolvents)
             if new.issubset(clauses): return False
-            print("Adding: ")
-            print(new)
+            # print("Adding: ")
+            # print(new)
             clauses = clauses.union(new)
 
-
+#######################################################3
+# CNF and pl-res as inference mechanism
+# pl_cnf = pl()
+# pl_cnf.tell("-B11,P12,P21")
+# pl_cnf.tell("-P12,B11")
+# pl_cnf.tell("-P21,B11")
+# pl_cnf.tell("-B11")
+# print(pl_cnf.getKB())
+# print("---RESOLUTION---")
+# print(pl_cnf.ask("-P12"))
+#######################################################3
 # CNF and pl-res as inference mechanism
 pl_cnf = pl()
-pl_cnf.tell("-B11,P12,P21")
-pl_cnf.tell("-P12,B11")
-pl_cnf.tell("-P21,B11")
-pl_cnf.tell("-B11")
+pl_cnf.tell("-S11,W12,W21")
+pl_cnf.tell("-W12,S11")
+pl_cnf.tell("-W21,S11")
+pl_cnf.tell("S11")
+pl_cnf.tell("-S21")
+
+
+# pl_cnf.tell("-W21")
+
 print(pl_cnf.getKB())
 print("---RESOLUTION---")
-print(pl_cnf.ask("-P12"))
+print(pl_cnf.ask("W12"))
