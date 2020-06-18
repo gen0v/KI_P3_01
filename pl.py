@@ -38,6 +38,32 @@ class pl:
                 return True
         return False
 
+    def addRules(self,breeze):
+        # breeze should always be positive in this scenario
+        if breeze[0] == "S": char = "W"
+        elif breeze[0] == "W": char = "S"
+        elif breeze[0] == "P": char = "B"
+        else: char = "P"
+        t = [(0,-1),(-1,0),(1,0),(0,1)]
+        x = int(breeze[1])
+        y = int(breeze[2])
+        temp,res = [],[]
+        # calc the couldbe pits
+        for i in t:
+            new_x = i[0] + x
+            new_y = i[1] + y
+            if new_x >= 1 and new_x <= 4 and new_y >= 1 and new_y <= 4:
+                temp.append(char + str(new_x) + str(new_y))
+        r1 = "-"+breeze
+        
+        for i in temp:
+            res.append(breeze+","+"-"+i)
+            r1 += ","+i
+        res.append(r1)
+        print("Adding rules: " + str(res))
+        for rule in res:
+            self.tell(rule)
+
     # resolve algorithm
     def pl_resolve(self,pair):
         # print("Pair: " + str(pair))
@@ -60,6 +86,10 @@ class pl:
                 flag = True
         if s == []:
             tempset = set(" ")
+            return tempset
+        elif flag == False:
+            tempset = set()
+            tempset.add(pair[0])
             return tempset
         else:
             s = ",".join(s)
@@ -98,16 +128,31 @@ class pl:
 # print(pl_cnf.ask("-P12"))
 #######################################################3
 # CNF and pl-res as inference mechanism
-pl_cnf = pl()
-pl_cnf.tell("-S11,W12,W21")
-pl_cnf.tell("-W12,S11")
-pl_cnf.tell("-W21,S11")
-pl_cnf.tell("S11")
-pl_cnf.tell("-S21")
+# pl_cnf = pl()
 
+# pl_cnf.tell("-B12")
+# pl_cnf.tell("-P12")
+# pl_cnf.tell("-B14")
+# pl_cnf.tell("-P14")
+# # pl_cnf.tell("-B34")
+# # pl_cnf.tell("-P34")
+# # pl_cnf.tell("-B32")
+# # pl_cnf.tell("-P32")
 
-# pl_cnf.tell("-W21")
+# pl_cnf.tell("B13")
+# pl_cnf.tell("-P13")
+# # pl_cnf.tell("B24")
+# # pl_cnf.tell("-P24")
+# # pl_cnf.tell("B22")
+# # pl_cnf.tell("-P22")
+# # pl_cnf.tell("B33")
+# # pl_cnf.tell("-P33")
 
-print(pl_cnf.getKB())
-print("---RESOLUTION---")
-print(pl_cnf.ask("W12"))
+# pl_cnf.addRules("B13")
+# # pl_cnf.addRules("B24")
+# # pl_cnf.addRules("B33")
+# # pl_cnf.addRules("B22")
+
+# print(pl_cnf.getKB())
+# print("---RESOLUTION---")
+# print(pl_cnf.ask("P23"))
