@@ -1,23 +1,9 @@
 import gym
 import fh_ac_ai_gym
-import pl
+import pl_horn as pl
 
 # first
 pl_cnf = pl.pl()
-#Rules Wumpus
-# pl_cnf.tell("-S11,W12,W21")
-# pl_cnf.tell("-W12,S11")
-# pl_cnf.tell("-W21,S11")
-#Rules Pit Left
-# pl_cnf.tell("B13")
-# pl_cnf.tell("B24")
-# pl_cnf.tell("B33")
-# pl_cnf.tell("B22")
-# pl_cnf.addRules("B13")
-# pl_cnf.addRules("B24")
-# pl_cnf.addRules("B33")
-# pl_cnf.addRules("B22")
-
 
 wumpus_env = gym.make('Wumpus-v0')
 cartpole_env = gym.make('Fuzzy-CartPole-v0')

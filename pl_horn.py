@@ -1,5 +1,5 @@
 import itertools
-
+import copy
 # Propositional Logic 
 
 class pl:
@@ -21,10 +21,42 @@ class pl:
             res.add(r)
         return res
 
+    def addRules(self,breeze):
+        # breeze should always be positive in this scenario
+        if breeze[0] == "S": char = "W"
+        else: char = "P"
+        t = [(0,-1),(-1,0),(1,0),(0,1)]
+        x = int(breeze[1])
+        y = int(breeze[2])
+        temp,res = [],[]
+        # calc the couldbe pits
+        for i in t:
+            new_x = i[0] + x
+            new_y = i[1] + y
+            if new_x >= 1 and new_x <= 4 and new_y >= 1 and new_y <= 4:
+                temp.append(char + str(new_x) + str(new_y))
+        r1 = "-"+breeze
+        for i in temp:
+            res.append(breeze+"=>"+i)
+            r1 += ","+i
+        print("Adding rules: " + str(res))
+        for rule in res:
+            self.tell(rule)
+
     # function to add new information to the kb
     # the sentence needs to be in cnf as we dont parse it yet
     def tell(self, sentence):
-        self.kb.add(sentence)
+        if sentence[0] == "-" and len(sentence) == 4:
+            #negative fact -> delete all rules where the fact is in the head\conclusion
+            kbcopy = copy.copy(self.kb)
+            for s in kbcopy:
+                print(sentence[1:])
+                print(self.getClauseHead(s))
+                if sentence[1:] in self.getClauseHead(s):
+                    print("Removing : " + s)
+                    self.kb.remove(s)
+        else:
+            self.kb.add(sentence)
 
     def ask(self, alpha):
         return self.pl_fc_entails(self.kb, alpha)
@@ -104,7 +136,7 @@ class pl:
 
 
 # Propositional Horn clauses and forward chaining to compute entailment
-pl_horn = pl()
+# pl_horn = pl()
 # pl_horn.tell("B11=>P12,P21")
 # pl_horn.tell("P12,P21=>B11")
 
@@ -117,9 +149,10 @@ pl_horn = pl()
 # pl_horn.tell("B22")
 
 ######
-pl_horn.tell("S11=>W12")
-pl_horn.tell("S11=>W21")
-pl_horn.tell("S11")
+# pl_horn.tell("S11=>W12")
+# pl_horn.tell("S11=>W21")
+# pl_horn.tell("S11")
+# pl_horn.tell("-W12")
 # pl_horn.tell("S21")
 
 ######
@@ -133,7 +166,8 @@ pl_horn.tell("S11")
 # pl_horn.tell("S11")
 
 
-print(pl_horn.getKB())
-print("---RESOLUTION---")
-# print(pl_horn.ask("P12"))
-print(pl_horn.ask("W22"))
+# print(pl_horn.getKB())
+# print("---RESOLUTION---")
+# # print(pl_horn.ask("P12"))
+
+# print(pl_horn.ask("W21"))
