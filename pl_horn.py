@@ -67,7 +67,9 @@ class pl:
                 inferred[p] = True
                 for c in kb:
                     c_premise = c.split("=>")[0].split(",")
-                    if len(c_premise) == 1: continue
+                    ### ERROR here ?
+                    #if len(c_premise) == 1: continue
+                    
                     print("C: " + str(c))
                     if p in c_premise:
                         print("C2: " + str(c))
@@ -114,8 +116,24 @@ pl_horn = pl()
 # pl_horn.tell("B13")
 # pl_horn.tell("B22")
 
-# pl_horn.tell("S11=>")
+######
+pl_horn.tell("S11=>W12")
+pl_horn.tell("S11=>W21")
+pl_horn.tell("S11")
+# pl_horn.tell("S21")
+
+######
+
+
+# pl_horn.tell("S11=>W12,W21")
+# pl_horn.tell("S11=>W12")
+# pl_horn.tell("S11=>W21")
+# pl_horn.tell("W12=>S11")
+# pl_horn.tell("W21=>S11")
+# pl_horn.tell("S11")
+
 
 print(pl_horn.getKB())
 print("---RESOLUTION---")
-print(pl_horn.ask("P32"))
+# print(pl_horn.ask("P12"))
+print(pl_horn.ask("W22"))
