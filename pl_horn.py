@@ -50,10 +50,10 @@ class pl:
             #negative fact -> delete all rules where the fact is in the head\conclusion
             kbcopy = copy.copy(self.kb)
             for s in kbcopy:
-                print(sentence[1:])
-                print(self.getClauseHead(s))
+                # print(sentence[1:])
+                # print(self.getClauseHead(s))
                 if sentence[1:] in self.getClauseHead(s):
-                    print("Removing : " + s)
+                    # print("Removing : " + s)
                     self.kb.remove(s)
         else:
             self.kb.add(sentence)
@@ -88,12 +88,12 @@ class pl:
             count[l] = len((l.split("=>")[0].split(",")))
 
         while len(agenda) > 0:
-            print("--------------")
-            print("Count: " + str(count))
-            print("Agenda: " + str(agenda))
-            print("Inferred: " + str(inferred))
+            # print("--------------")
+            # print("Count: " + str(count))
+            # print("Agenda: " + str(agenda))
+            # print("Inferred: " + str(inferred))
             p = agenda.pop()
-            print("P: " + str(p))
+            # print("P: " + str(p))
             if p == q: return True
             if inferred[p] == False:
                 inferred[p] = True
@@ -102,28 +102,28 @@ class pl:
                     ### ERROR here ?
                     #if len(c_premise) == 1: continue
                     
-                    print("C: " + str(c))
+                    # print("C: " + str(c))
                     if p in c_premise:
-                        print("C2: " + str(c))
-                        print(count)
+                        # print("C2: " + str(c))
+                        # print(count)
                         count[str(c)] -= 1
                         if count[str(c)] == 0: 
-                            print("New agenda")
+                            # print("New agenda")
                             agenda += self.getClauseHead(c)
-                            print(agenda)
-                            print("+++++++++")
+                            # print(agenda)
+                            # print("+++++++++")
         return False
 
     def getClauseHead(self, clause):
-        print(clause)
+        # print(clause)
         if "=>" in clause:
             res = clause.split("=>")
-            print(res)
+            # print(res)
             res = res[1].split(',')
-            print(res)
+            # print(res)
         else:
             res = clause.split(",")
-        print(res)
+        # print(res)
         return res
     
     def getClauseBody(self, clause):

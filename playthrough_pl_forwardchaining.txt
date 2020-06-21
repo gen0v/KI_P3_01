@@ -1,0 +1,718 @@
+{'x': 0, 'y': 0, 'gold': False, 'direction': <Direction.EAST: 1>, 'arrow': True, 'stench': True, 'breeze': False, 'glitter': False, 'bump': False, 'scream': False}
++---+---+---+---+
+|   |   |   |  G|
+|   |   |   |   |
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+| A>|   |   |   |
++---+---+---+---+
+Perception [ St: True, Br: False, G: False, Bu: False, Sc: False ]
+Score : 0
+Tell? (x/exit)(r/rules) S11
+Tell? (x/exit)(r/rules) r
+Rule? S11
+Adding rules: ['S11=>W21', 'S11=>W12']
+Tell? (x/exit)(r/rules) x
+Ask? (x/exit)  W12
+True
+Ask? (x/exit)  W21
+True
+Ask? (x/exit)  x
++---+---+---+---+
+|   |   |   |  G|
+|   |   |   |   |
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+| A>|   |   |   |
++---+---+---+---+
+Perception [ St: True, Br: False, G: False, Bu: False, Sc: False ]
+Score : 0
+Which action? (x/exit) 1
++---+---+---+---+
+|   |   |   |  G|
+|   |   |   |   |
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+| A^|   |   |   |
++---+---+---+---+
+Perception [ St: True, Br: False, G: False, Bu: False, Sc: False ]
+Score : -1
+Which action? (x/exit) 0
++---+---+---+---+
+|   |   |   |  G|
+|   |   |   |   |
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+| A^|   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: False, G: False, Bu: False, Sc: False ]
+Score : -2
+Which action? (x/exit) x
+{'x': 0, 'y': 1, 'gold': False, 'direction': <Direction.NORTH: 0>, 'arrow': True, 'stench': False, 'breeze': False, 'glitter': False, 'bump': False, 'scream': False}
++---+---+---+---+
+|   |   |   |  G|
+|   |   |   |   |
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+| A^|   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: False, G: False, Bu: False, Sc: False ]
+Score : -2
+Tell? (x/exit)(r/rules) -W12
+Tell? (x/exit)(r/rules) x
+Ask? (x/exit)  W12
+False
+Ask? (x/exit)  W21
+True
+Ask? (x/exit)  x
++---+---+---+---+
+|   |   |   |  G|
+|   |   |   |   |
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+| A^|   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: False, G: False, Bu: False, Sc: False ]
+Score : -2
+Which action? (x/exit) 0
++---+---+---+---+
+|   |   |   |  G|
+|   |   |   |   |
++---+---+---+---+
+|   | P |   |   |
+| A^|   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: True, G: False, Bu: False, Sc: False ]
+Score : -3
+Which action? (x/exit) x
+{'x': 0, 'y': 2, 'gold': False, 'direction': <Direction.NORTH: 0>, 'arrow': True, 'stench': False, 'breeze': True, 'glitter': False, 'bump': False, 'scream': False}
++---+---+---+---+
+|   |   |   |  G|
+|   |   |   |   |
++---+---+---+---+
+|   | P |   |   |
+| A^|   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: True, G: False, Bu: False, Sc: False ]
+Score : -3
+Tell? (x/exit)(r/rules) B13
+Tell? (x/exit)(r/rules) B13,B24,B33,B22=>P23
+Tell? (x/exit)(r/rules) r
+Rule? B13
+Adding rules: ['B13=>P12', 'B13=>P23', 'B13=>P14']
+Tell? (x/exit)(r/rules) x
+Ask? (x/exit)  13
+False
+Ask? (x/exit)  P14
+True
+Ask? (x/exit)  P23
+True
+Ask? (x/exit)  x
++---+---+---+---+
+|   |   |   |  G|
+|   |   |   |   |
++---+---+---+---+
+|   | P |   |   |
+| A^|   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: True, G: False, Bu: False, Sc: False ]
+Score : -3
+Which action? (x/exit) 0
++---+---+---+---+
+|   |   |   |  G|
+| A^|   |   |   |
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: False, G: False, Bu: False, Sc: False ]
+Score : -4
+Which action? (x/exit) 2
++---+---+---+---+
+|   |   |   |  G|
+| A>|   |   |   |
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: False, G: False, Bu: False, Sc: False ]
+Score : -5
+Which action? (x/exit) 0
++---+---+---+---+
+|   |   |   |  G|
+|   | A>|   |   |
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: True, G: False, Bu: False, Sc: False ]
+Score : -6
+Which action? (x/exit) x
+{'x': 1, 'y': 3, 'gold': False, 'direction': <Direction.EAST: 1>, 'arrow': True, 'stench': False, 'breeze': True, 'glitter': False, 'bump': False, 'scream': False}
++---+---+---+---+
+|   |   |   |  G|
+|   | A>|   |   |
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: True, G: False, Bu: False, Sc: False ]
+Score : -6
+Tell? (x/exit)(r/rules) -P12
+Tell? (x/exit)(r/rules) -P14
+Tell? (x/exit)(r/rules) B24
+Tell? (x/exit)(r/rules) x
+Ask? (x/exit)  P14
+False
+Ask? (x/exit)  P23
+True
+Ask? (x/exit)  x
++---+---+---+---+
+|   |   |   |  G|
+|   | A>|   |   |
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: True, G: False, Bu: False, Sc: False ]
+Score : -6
+Which action? (x/exit) 0
++---+---+---+---+
+|   |   |   |  G|
+|   |   | A>|   |
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: False, G: False, Bu: False, Sc: False ]
+Score : -7
+Which action? (x/exit) 2
++---+---+---+---+
+|   |   |   |  G|
+|   |   | Av|   |
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: False, G: False, Bu: False, Sc: False ]
+Score : -8
+Which action? (x/exit) 0
++---+---+---+---+
+|   |   |   |  G|
+|   |   |   |   |
++---+---+---+---+
+|   | P |   |   |
+|   |   | Av|   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: True, G: False, Bu: False, Sc: False ]
+Score : -9
+Which action? (x/exit) 0
++---+---+---+---+
+|   |   |   |  G|
+|   |   |   |   |
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   | Av|   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: False, G: False, Bu: False, Sc: False ]
+Score : -10
+Which action? (x/exit) 2
++---+---+---+---+
+|   |   |   |  G|
+|   |   |   |   |
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   | A<|   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: False, G: False, Bu: False, Sc: False ]
+Score : -11
+Which action? (x/exit) 0
++---+---+---+---+
+|   |   |   |  G|
+|   |   |   |   |
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   | A<|   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: True, Br: True, G: False, Bu: False, Sc: False ]
+Score : -12
+Which action? (x/exit) 0
++---+---+---+---+
+|   |   |   |  G|
+|   |   |   |   |
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+| A<|   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: False, G: False, Bu: False, Sc: False ]
+Score : -13
+Which action? (x/exit) 2
++---+---+---+---+
+|   |   |   |  G|
+|   |   |   |   |
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+| A^|   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: False, G: False, Bu: False, Sc: False ]
+Score : -14
+Which action? (x/exit) 0
++---+---+---+---+
+|   |   |   |  G|
+|   |   |   |   |
++---+---+---+---+
+|   | P |   |   |
+| A^|   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: True, G: False, Bu: False, Sc: False ]
+Score : -15
+Which action? (x/exit) x
+{'x': 0, 'y': 2, 'gold': False, 'direction': <Direction.NORTH: 0>, 'arrow': True, 'stench': False, 'breeze': True, 'glitter': False, 'bump': False, 'scream': False}
++---+---+---+---+
+|   |   |   |  G|
+|   |   |   |   |
++---+---+---+---+
+|   | P |   |   |
+| A^|   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: True, G: False, Bu: False, Sc: False ]
+Score : -15
+Tell? (x/exit)(r/rules) B33
+Tell? (x/exit)(r/rules) B22
+Tell? (x/exit)(r/rules) x
+Ask? (x/exit)  P12
+False
+Ask? (x/exit)  P13
+False
+Ask? (x/exit)  P14
+False
+Ask? (x/exit)  P22
+False
+Ask? (x/exit)  P23
+True
+Ask? (x/exit)  P24
+False
+Ask? (x/exit)  P32
+False
+Ask? (x/exit)  P33
+False
+Ask? (x/exit)  P34
+False
+Ask? (x/exit)  x
++---+---+---+---+
+|   |   |   |  G|
+|   |   |   |   |
++---+---+---+---+
+|   | P |   |   |
+| A^|   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: True, G: False, Bu: False, Sc: False ]
+Score : -15
+Which action? (x/exit) 0
++---+---+---+---+
+|   |   |   |  G|
+| A^|   |   |   |
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: False, G: False, Bu: False, Sc: False ]
+Score : -16
+Which action? (x/exit) 2
++---+---+---+---+
+|   |   |   |  G|
+| A>|   |   |   |
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: False, G: False, Bu: False, Sc: False ]
+Score : -17
+Which action? (x/exit) 0
++---+---+---+---+
+|   |   |   |  G|
+|   | A>|   |   |
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: True, G: False, Bu: False, Sc: False ]
+Score : -18
+Which action? (x/exit) 0
++---+---+---+---+
+|   |   |   |  G|
+|   |   | A>|   |
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: False, G: False, Bu: False, Sc: False ]
+Score : -19
+Which action? (x/exit) 0
++---+---+---+---+
+|   |   |   |  G|
+|   |   |   | A>|
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: False, G: True, Bu: False, Sc: False ]
+Score : -20
+Which action? (x/exit) 3
++---+---+---+---+
+|   |   |   |   |
+|   |   |   | A>|
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: False, G: True, Bu: False, Sc: False ]
+Score : -21
+Which action? (x/exit) 2
++---+---+---+---+
+|   |   |   |   |
+|   |   |   | Av|
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: False, G: False, Bu: False, Sc: False ]
+Score : -22
+Which action? (x/exit) 2
++---+---+---+---+
+|   |   |   |   |
+|   |   |   | A<|
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: False, G: False, Bu: False, Sc: False ]
+Score : -23
+Which action? (x/exit) 0
++---+---+---+---+
+|   |   |   |   |
+|   |   | A<|   |
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: False, G: False, Bu: False, Sc: False ]
+Score : -24
+Which action? (x/exit) 0
++---+---+---+---+
+|   |   |   |   |
+|   | A<|   |   |
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: True, G: False, Bu: False, Sc: False ]
+Score : -25
+Which action? (x/exit) 0
++---+---+---+---+
+|   |   |   |   |
+| A<|   |   |   |
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: False, G: False, Bu: False, Sc: False ]
+Score : -26
+Which action? (x/exit) 1
++---+---+---+---+
+|   |   |   |   |
+| Av|   |   |   |
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: False, G: False, Bu: False, Sc: False ]
+Score : -27
+Which action? (x/exit) 0
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   | P |   |   |
+| Av|   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: True, G: False, Bu: False, Sc: False ]
+Score : -28
+Which action? (x/exit) 0
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+| Av|   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+|   |   |   |   |
++---+---+---+---+
+Perception [ St: False, Br: False, G: False, Bu: False, Sc: False ]
+Score : -29
+Which action? (x/exit) 0
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+| Av|   |   |   |
++---+---+---+---+
+Perception [ St: True, Br: False, G: False, Bu: False, Sc: False ]
+Score : -30
+Which action? (x/exit) 5
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   | P |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |   |   |   |
+|   |   |   |   |
++---+---+---+---+
+|   |W  |   |   |
+| Av|   |   |   |
++---+---+---+---+
+Perception [ St: True, Br: False, G: False, Bu: False, Sc: False ]
+Score : 970
+Which action? (x/exit) x
+[1000]
